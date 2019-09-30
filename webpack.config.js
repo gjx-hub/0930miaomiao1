@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
-const webpack = require('webpack'); //to access built-in plugins
+//const webpack = require('webpack'); //to access built-in plugins
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
     },
     devServer: {
         open: true,
-        contentBase:'src',
+        // contentBase:'src',
         port: 3000,
         hot: true
     },
@@ -28,20 +28,18 @@ module.exports = {
             template: path.join(__dirname, 'src/index.html'),
             filename: 'index.html'
         }),
+        new VueLoaderPlugin()
     ],
 
     //安装vue-loader
     module: {
         rules: [
           // ... 其它规则
-          {test: /\.vue$/,loader: 'vue-loader'},
+        //   {test: /\.vue$/,loader: 'vue-loader'},
           //loader
-          { test: /\.css$/, use: ['style-loader','css-loader'] },
-          { test: /\.vue$/, loader:'vue-loader' }
+          { test: /\.css$/, loader: ['style-loader','css-loader'] },
+          { test: /\.vue$/, loader:'vue-loader' },
+          { test: /\.(ttf|woff|eot|svg)$/,loader:'url-loader'}
         ]
-      },
-    plugins: [
-    // 请确保引入这个插件！
-    new VueLoaderPlugin()
-    ]
+    },
 }

@@ -1,6 +1,6 @@
 //引入路由
 import VueRouter from 'vue-router' 
-Vue.use('VueRouter')
+
 
 // 把cinema和index页面引入
 import cinema from './pages/cinema/cinema.vue'
