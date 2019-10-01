@@ -39,7 +39,8 @@ module.exports = {
           //loader
           { test: /\.css$/, loader: ['style-loader','css-loader'] },
           { test: /\.vue$/, loader:'vue-loader' },
-          { test: /\.(ttf|woff|eot|svg)$/,loader:'url-loader'}
+          { test: /\.(ttf|woff|eot|svg)$/,loader:'url-loader'},
+          { test: /\.less/, loader:['style-loader','css-loader','less-loader']}
         ]
     },
 }

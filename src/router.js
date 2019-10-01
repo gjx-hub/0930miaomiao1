@@ -1,5 +1,5 @@
 //引入路由
-import VueRouter from 'vue-router' 
+import VueRouter from 'vue-router'
 
 
 // 把cinema和index页面引入
@@ -8,10 +8,24 @@ import index from './pages/index/index.vue'
 
 // 路由创建实例
 const router = new VueRouter({
-    routes:[
-        {path:'/',redirect:'/index'},
-        {path:'/index',component:index},
-        {path:'/cinema',component:cinema},
+    routes: [{
+            path: '/',
+            redirect: '/index'
+        },
+        {
+            path: '/index',
+            component: index,
+            meta: {
+                title:'电影'
+            }
+        },
+        {
+            path: '/cinema',
+            component: cinema,
+            meta: {
+                title:'影院'
+            }
+        },
     ]
 })
 
