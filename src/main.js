@@ -16,9 +16,15 @@ import './font/my-font/iconfont.css'
 // 引入main.css
 import './main.css'
 
+
+
+
+
 Vue.use(MintUI)
 
 Vue.use(VueRouter)
+
+
 
 var vm = new Vue({
     el: '#app',

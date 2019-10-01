@@ -34,13 +34,30 @@ module.exports = {
     //安装vue-loader
     module: {
         rules: [
-          // ... 其它规则
-        //   {test: /\.vue$/,loader: 'vue-loader'},
-          //loader
-          { test: /\.css$/, loader: ['style-loader','css-loader'] },
-          { test: /\.vue$/, loader:'vue-loader' },
-          { test: /\.(ttf|woff|eot|svg)$/,loader:'url-loader'},
-          { test: /\.less/, loader:['style-loader','css-loader','less-loader']}
+            // ... 其它规则
+            //   {test: /\.vue$/,loader: 'vue-loader'},
+            //loader
+            {
+                test: /\.css$/,
+                loader: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.(ttf|woff|eot|svg)$/,
+                loader: 'url-loader'
+            },
+            {
+                test: /\.less/,
+                loader: ['style-loader', 'css-loader', 'less-loader']
+            }
         ]
     },
+    resolve:{
+        alias:{
+            '@':path.join(__dirname,'src')
+        }
+    }
 }
