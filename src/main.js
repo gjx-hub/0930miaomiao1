@@ -20,6 +20,12 @@ import './main.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+// 引入vuex
+// import Vuex from 'vuex'
+// Vue.use(Vuex)
+import store from './store/store'
+
+
 
 
 Vue.use(MintUI)
@@ -31,7 +37,8 @@ Vue.use(VueAxios, axios)
 var vm = new Vue({
     el: '#app',
     render: c => c(app),
-    router
+    router,
+    store
 })
 
 
