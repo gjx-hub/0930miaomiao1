@@ -9,6 +9,8 @@
 <script>
 import tab from "@/components/index/Tab.vue"
 export default {
+  //注册组件
+  //components用来定义私有组件
   components:{
     tab
   }

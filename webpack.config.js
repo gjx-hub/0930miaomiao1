@@ -13,7 +13,14 @@ module.exports = {
         open: true,
         // contentBase:'src',
         port: 3000,
-        hot: true
+        hot: true,
+        //配置代理
+        proxy:{
+            '/api':{
+                target:'http://39.97.33.178',
+                changeOrgin:true
+            }
+        }
     },
 
     //安装html-webpack-plugin时写的

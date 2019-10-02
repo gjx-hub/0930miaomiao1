@@ -16,7 +16,9 @@ import './font/my-font/iconfont.css'
 // 引入main.css
 import './main.css'
 
-
+//引入axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 
 
@@ -24,7 +26,7 @@ Vue.use(MintUI)
 
 Vue.use(VueRouter)
 
-
+Vue.use(VueAxios, axios)
 
 var vm = new Vue({
     el: '#app',

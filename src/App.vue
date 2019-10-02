@@ -53,6 +53,7 @@ export default {
       }
     },
     $route(newVal,oldVal){
+      //如果没有配置这个标题,还显示原来的标题
       if(isNotBlank(newVal.meta.title)){
         this.title=newVal.meta.title
       }
