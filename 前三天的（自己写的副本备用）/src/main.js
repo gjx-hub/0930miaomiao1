@@ -23,8 +23,7 @@ import VueAxios from 'vue-axios'
 // 引入vuex
 // import Vuex from 'vuex'
 // Vue.use(Vuex)
-// import store from './store/store'
-import store from './store'
+import store from './store/store'
 
 
 
