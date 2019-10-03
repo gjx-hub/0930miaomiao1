@@ -5,10 +5,10 @@
     <mt-index-list>
       <!-- 热门城市列表 -->
       <div class="hot-city">
-        <!-- <p class="hot-city-title">热门城市</p> -->
-        <p class="hot-city-title" @click="changeMsg">{{message123}}</p>
+        <p class="hot-city-title">热门城市</p>
+        <!-- <p class="hot-city-title" @click="changeMsg">{{message123}}</p> -->
         <ul class="hot-city-list">
-          <li v-for="city in hotCities" :key="'hot-city'+city.id">
+          <li @click='changeCity(city)' v-for="city in hotCities" :key="'hot-city'+city.id" >
             <p>{{city.nm}}</p>
           </li>
         </ul>
@@ -23,7 +23,9 @@
       <!-- 字母A-Z -->
       <mt-index-section v-for="key in Object.keys(cityObj).sort()" :index="key" :key="key">
         <!-- 字母A-Z里具体的值 -->
-        <mt-cell v-for="city in cityObj[key]" :title="city.nm" :key="'list'+city.id"></mt-cell>
+        <div  @click='changeCity(city)' v-for="city in cityObj[key]" :key="'list'+city.id">
+          <mt-cell :title="city.nm"></mt-cell>
+        </div>
       </mt-index-section>
     </mt-index-list>
   </div>
@@ -39,22 +41,14 @@ export default {
     };
   },
   methods: {
-    changeMsg() {
-      this.$store.commit({ type: "changeMsg", msg: "中国" });
+    changeCity(city){
+      this.$store.commit({
+        type:'changeCity',
+        city
+      })
     }
   },
   computed: {
-    //?????没用上
-    // message() {
-    //   return this.$store.state.message;
-    // },
-    // count() {
-    //   return this.$store.state.count;
-    // },
-
-    message123() {
-      return this.$store.getters.message123;//调用的getter，走store.js里的getters
-    },
     hotCities() {
       return this.cities.filter(city => {
         return city.isHot === 1;

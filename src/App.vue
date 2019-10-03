@@ -43,6 +43,7 @@ export default {
     } else if (this.$route.path == "/cinema") {
       this.selected = "cinema";
     }
+    this.$store.dispatch('setLocationCity')
   },
   watch: {
     selected(newVal, oldVal) {
